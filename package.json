@@ -14,14 +14,46 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "index",
-      "title": "Show Detail",
-      "description": "Template with a plain detail view",
-      "mode": "view"
+      "name": "starknetConverterCommand",
+      "title": "Starknet Converter",
+      "description": "Convert between felts, integers, strings and hex",
+      "mode": "view",
+      "icon": "icon.png"
+    },
+    {
+      "name": "cairoBookCommand",
+      "title": "Cairo Book",
+      "description": "Search the Cairo book",
+      "mode": "view",
+      "icon": "icon.png"
+    },
+    {
+      "name": "starknetEcosystemSearchCommand",
+      "title": "Starknet Ecosystem",
+      "description": "Search the entire Starknet Ecosystem",
+      "mode": "view",
+      "icon": "icon.png"
+    },
+    {
+      "name": "starknetStatsCommand",
+      "title": "Starknet Stats",
+      "description": "Get live stats of Starknet",
+      "mode": "view",
+      "icon": "icon.png"
+    },
+    {
+      "name": "starknetChadsCommand",
+      "title": "Starknet Chads",
+      "description": "See top contributors on Starknet",
+      "mode": "view",
+      "icon": "icon.png"
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.51.1"
+    "@raycast/api": "^1.51.1",
+    "axios": "^1.4.0",
+    "bn.js": "^5.2.1",
+    "starknet": "^5.10.2"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
