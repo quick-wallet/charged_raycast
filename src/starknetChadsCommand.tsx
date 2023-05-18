@@ -19,7 +19,7 @@ export default function Command() {
 
   useEffect(() => {
     (async () => {
-      const promises = [axios.get(`https://wgftphtjn4.execute-api.ap-south-1.amazonaws.com/v1/starknet/builders`)];
+      const promises = [axios.get(`https://api.getcharged.dev/v1/starknet/builders`)];
 
       const [builders] = await Promise.all(promises);
 

@@ -86,6 +86,7 @@ export default function Command() {
           key={item.id}
           title={item.name}
           detail={<List.Item.Detail markdown={getMarkdown(item)} />}
+          icon={{ source: getLogo(item), mask: Image.Mask.Circle }}
           actions={
             <ActionPanel title="Open in browser">
               <Action.OpenInBrowser
@@ -95,7 +96,6 @@ export default function Command() {
               />
             </ActionPanel>
           }
-          icon={getLogo(item)}
         />
       ))}
     </List>
