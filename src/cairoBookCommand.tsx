@@ -1,6 +1,7 @@
 import { List, ActionPanel, Action } from "@raycast/api";
 import { useEffect, useState } from "react";
 import fs from "fs";
+import * as analytics from "./utils/analytics";
 
 type ChapterDetails = {
   name: string;
@@ -10,6 +11,10 @@ type ChapterDetails = {
 export default function Command() {
   const [listLoading, setListLoading] = useState<boolean>(true);
   const [listItems, setListItems] = useState<ChapterDetails[]>([]);
+
+  useEffect(() => {
+    analytics.trackEvent("OPEN_CAIRO_BOOK");
+  }, []);
 
   useEffect(() => {
     (async () => {

@@ -1,7 +1,8 @@
 import { Form, ActionPanel, Action, Clipboard, closeMainWindow, showHUD } from "@raycast/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import starknetConverter from "./utils/starknetConverter.js";
 import { shortString } from "starknet";
+import * as analytics from "./utils/analytics";
 
 enum ELEMENTS {
   RAW_VALUE = "rawValueField",
@@ -22,6 +23,10 @@ export default function Command() {
   const [u256Value, setU256Value] = useState<string>("");
   const [big3Value, setBig3Value] = useState<string>("");
   const [focussedElement, setFocussedElement] = useState<ELEMENTS>(ELEMENTS.RAW_VALUE);
+
+  useEffect(() => {
+    analytics.trackEvent("OPEN_STARKNET_CONVERTER");
+  }, []);
 
   const onRawValueChange = (value: string) => {
     setRawValue(value);

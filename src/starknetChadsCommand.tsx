@@ -1,12 +1,17 @@
 import { List, ActionPanel, Action, Image } from "@raycast/api";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import * as analytics from "./utils/analytics";
 
 export default function Command() {
   const [listLoading, setListLoading] = useState<boolean>(true);
   const [listItems, setListItems] = useState<
     { name: string; id: string; username: string; profile_image_url: string }[]
   >([]);
+
+  useEffect(() => {
+    analytics.trackEvent("OPEN_STARKNET_CHADS");
+  }, []);
 
   useEffect(() => {
     (async () => {

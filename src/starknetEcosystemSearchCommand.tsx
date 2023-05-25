@@ -1,6 +1,7 @@
 import { List, ActionPanel, Action, Image } from "@raycast/api";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import * as analytics from "./utils/analytics";
 
 interface Network {
   website?: string;
@@ -59,6 +60,10 @@ const getMarkdown = (project: Project): string => {
 export default function Command() {
   const [listLoading, setListLoading] = useState<boolean>(true);
   const [listItems, setListItems] = useState<Project[]>([]);
+
+  useEffect(() => {
+    analytics.trackEvent("OPEN_STARKNET_ECOSYSTEM");
+  }, []);
 
   useEffect(() => {
     (async () => {
