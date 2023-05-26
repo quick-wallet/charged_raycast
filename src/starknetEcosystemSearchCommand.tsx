@@ -88,7 +88,7 @@ export default function Command() {
           detail={<List.Item.Detail markdown={getMarkdown(item)} />}
           icon={{ source: getLogo(item), mask: Image.Mask.Circle }}
           actions={
-            <ActionPanel title="Open in browser">
+            <ActionPanel>
               <Action.OpenInBrowser
                 url={
                   item.network.website ? item.network.website : `https://www.starknet-ecosystem.com/projects/${item.id}`
