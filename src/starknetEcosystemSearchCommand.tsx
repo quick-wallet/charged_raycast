@@ -44,7 +44,9 @@ const getLogo = (project: Project): string => {
 };
 
 const getMarkdown = (project: Project): string => {
-  return `<img src="${getLogo(project)}" alt= “” width="50" height="50" align="left">\n
+  return `<img src="${getLogo(
+    project
+  )}" alt= “” width="50" height="50" align="left">\n
   ## ${project.name}\n
   ${project.description}\n
   ---
@@ -76,9 +78,13 @@ export default function Command() {
       }; allProjects;`;
       let allProjects: Project[] = eval(requiredJs);
       allProjects = allProjects.map((project) =>
-        project.id === SELF_PROJECT_ID ? { ...project, image: "charged.jpg" } : project
+        project.id === SELF_PROJECT_ID
+          ? { ...project, image: "charged.jpg" }
+          : project
       );
-      allProjects.sort((x, y) => (x.id === SELF_PROJECT_ID ? -1 : y.id === SELF_PROJECT_ID ? 1 : 0)); // shamelessly adding ourselves to the front
+      allProjects.sort((x, y) =>
+        x.id === SELF_PROJECT_ID ? -1 : y.id === SELF_PROJECT_ID ? 1 : 0
+      ); // shamelessly adding ourselves to the front
       setListItems(allProjects);
       setListLoading(false);
     })();
@@ -93,7 +99,7 @@ export default function Command() {
           detail={<List.Item.Detail markdown={getMarkdown(item)} />}
           icon={{ source: getLogo(item), mask: Image.Mask.Circle }}
           actions={
-            <ActionPanel title="Open in browser">
+            <ActionPanel>
               <Action.OpenInBrowser
                 onOpen={() =>
                   analytics.trackEvent("ECOSYSTEM_PAGE_OPEN", {
@@ -101,7 +107,9 @@ export default function Command() {
                   })
                 }
                 url={
-                  item.network.website ? item.network.website : `https://www.starknet-ecosystem.com/projects/${item.id}`
+                  item.network.website
+                    ? item.network.website
+                    : `https://www.starknet-ecosystem.com/projects/${item.id}`
                 }
               />
             </ActionPanel>

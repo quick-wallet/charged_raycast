@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Form, ActionPanel, Action, Clipboard, closeMainWindow, showHUD } from "@raycast/api";
 import { useEffect, useState } from "react";
+=======
+import { Form, ActionPanel, Action, Clipboard, closeMainWindow, showHUD, Icon } from "@raycast/api";
+import { useState } from "react";
+>>>>>>> contributions/merge-1685107761150023000
 import starknetConverter from "./utils/starknetConverter.js";
 import { shortString } from "starknet";
 import * as analytics from "./utils/analytics";
@@ -59,7 +64,7 @@ export default function Command() {
       <Form
         actions={
           <ActionPanel>
-            <Action.SubmitForm title="Copy to Clipboard" onSubmit={onSubmit} />
+            <Action.SubmitForm title="Copy to Clipboard" icon={Icon.CopyClipboard} onSubmit={onSubmit} />
           </ActionPanel>
         }
       >
