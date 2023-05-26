@@ -1,15 +1,4 @@
-import {
-  List,
-  ActionPanel,
-  Action,
-  Form,
-  Icon,
-  Color,
-  Clipboard,
-  showHUD,
-  closeMainWindow,
-  PopToRootType,
-} from "@raycast/api";
+import { List, ActionPanel, Action, Form, Clipboard, showHUD, closeMainWindow, PopToRootType } from "@raycast/api";
 import * as starknet from "starknet";
 import { useEffect, useState } from "react";
 import * as analytics from "./utils/analytics";
