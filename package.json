@@ -46,8 +46,7 @@
       "description": "See top contributors on Starknet",
       "mode": "view",
       "icon": "icon.png",
-<<<<<<< HEAD
-      "subtitle": "Twitter profiles of all Starknet chads"
+      "subtitle": "Charged"
     },
     {
       "name": "starknetUtilsCommand",
@@ -55,10 +54,7 @@
       "description": "Common starknet utils taken from famous libraries",
       "mode": "view",
       "icon": "icon.png",
-      "subtitle": "Util functions from libraries"
-=======
       "subtitle": "Charged"
->>>>>>> contributions/merge-1685107761150023000
     }
   ],
   "dependencies": {
