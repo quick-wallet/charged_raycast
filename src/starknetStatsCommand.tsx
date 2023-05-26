@@ -97,7 +97,10 @@ export default function Command() {
           title={item.name}
           actions={
             <ActionPanel>
-              <Action.OpenInBrowser url="https://starkscan.co/stats" />
+              <Action.OpenInBrowser
+                onOpen={() => analytics.trackEvent("STATS_OPEN_STARKSCAN")}
+                url="https://starkscan.co/stats"
+              />
             </ActionPanel>
           }
           accessories={[{ text: item.value }]}

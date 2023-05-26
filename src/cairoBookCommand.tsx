@@ -41,7 +41,14 @@ export default function Command() {
           detail={<List.Item.Detail markdown={item.markdown} />}
           actions={
             <ActionPanel>
-              <Action.OpenInBrowser url={`https://cairo-book.github.io/${item.name.replace(".md", ".html")}`} />
+              <Action.OpenInBrowser
+                onOpen={() =>
+                  analytics.trackEvent("CAIRO_BOOK_PAGE_OPEN", {
+                    page: item.name,
+                  })
+                }
+                url={`https://cairo-book.github.io/${item.name.replace(".md", ".html")}`}
+              />
             </ActionPanel>
           }
         />

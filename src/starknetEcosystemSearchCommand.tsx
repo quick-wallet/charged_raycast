@@ -95,6 +95,11 @@ export default function Command() {
           actions={
             <ActionPanel title="Open in browser">
               <Action.OpenInBrowser
+                onOpen={() =>
+                  analytics.trackEvent("ECOSYSTEM_PAGE_OPEN", {
+                    project: item.name,
+                  })
+                }
                 url={
                   item.network.website ? item.network.website : `https://www.starknet-ecosystem.com/projects/${item.id}`
                 }

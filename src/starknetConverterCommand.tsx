@@ -48,6 +48,7 @@ export default function Command() {
   };
 
   const onSubmit = async (values: any) => {
+    analytics.trackEvent("CONVERTER_VALUE_COPIED");
     await Clipboard.copy(values[focussedElement]);
     await showHUD("Copied ✅");
     await closeMainWindow();

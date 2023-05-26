@@ -33,7 +33,14 @@ export default function Command() {
           icon={{ source: item.profile_image_url, mask: Image.Mask.Circle }}
           actions={
             <ActionPanel>
-              <Action.OpenInBrowser url={`https://twitter.com/${item.username}`} />
+              <Action.OpenInBrowser
+                onOpen={() =>
+                  analytics.trackEvent("CHADS_OPEN_TWITTER", {
+                    user: item.username,
+                  })
+                }
+                url={`https://twitter.com/${item.username}`}
+              />
             </ActionPanel>
           }
         />
